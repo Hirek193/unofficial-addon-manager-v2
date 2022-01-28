@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Menedżer_nieoficialnych_dodatków_do_MaSzyny</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Menedżer nieoficialnych dodatków do MaSzyny_sp54z0a5_wpftmp.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Res\Fonts\Roboto-Light.ttf" />
+    <None Remove="Res\Fonts\Roboto-Medium.ttf" />
+    <None Remove="Res\Fonts\Roboto-Regular.ttf" />
+    <None Remove="Res\Fonts\Roboto-Thin.ttf" />
+    <None Remove="Res\logo.png" />
+    <None Remove="Res\splash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Menedżer nieoficialnych dodatków do MaSzyny_sp54z0a5_wpftmp.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Res\Fonts\Roboto-Medium.ttf" />
+    <Content Include="Res\Fonts\Roboto-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ini-parser" Version="2.5.2" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="106.15.0" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Res\Fonts\Roboto-Light.ttf" />
+    <Resource Include="Res\Fonts\Roboto-Regular.ttf" />
+    <Resource Include="Res\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Res\splash.png" />
+  </ItemGroup>
+
+</Project>
