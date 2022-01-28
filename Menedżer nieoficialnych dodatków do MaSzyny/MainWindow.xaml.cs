@@ -42,6 +42,7 @@ namespace Menedżer_nieoficialnych_dodatków_do_MaSzyny
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             brandLbl.Content = "Menedżer nieoficialnych dodatków do MaSzyny " + Globals.version;
+            selectCategoryLbl.Visibility = Visibility.Visible;
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -68,6 +69,7 @@ namespace Menedżer_nieoficialnych_dodatków_do_MaSzyny
 
         private async void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            HideAll();
             string selectedCategory = ((Border)((Button)sender).Parent).Name;
             addonScroller.Children.Clear();
             selectCategoryLbl.Visibility = Visibility.Visible;
@@ -223,6 +225,7 @@ namespace Menedżer_nieoficialnych_dodatków_do_MaSzyny
                     Dispatcher.Invoke(() =>
                     {
                         selectCategoryLbl.Visibility = Visibility.Hidden;
+                        addonCanvas.Visibility = Visibility.Visible;
                     });
                 }
                 else
@@ -264,6 +267,30 @@ namespace Menedżer_nieoficialnych_dodatków_do_MaSzyny
                 FileName = "https://www.facebook.com/Nieoficjalne-dodatki-do-Maszyny-551258932040537",
                 UseShellExecute = true
             });
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            // Simple process start to open github issues
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/Hirek193/unofficial-addon-manager-v2/issues",
+                UseShellExecute = true
+            });
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            HideAll();
+            selectCategoryLbl.Visibility = Visibility.Hidden;
+            contactCanvas.Visibility = Visibility.Visible;
+
+        }
+        private void HideAll()
+        {
+            contactCanvas.Visibility = Visibility.Hidden;
+            addonCanvas.Visibility = Visibility.Hidden;
+            selectCategoryLbl.Visibility = Visibility.Visible;
         }
     }
 

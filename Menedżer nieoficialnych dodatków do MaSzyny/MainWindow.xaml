@@ -8,15 +8,8 @@
         Width="1234" Height="648" Background="Transparent"
         WindowStyle="None" WindowStartupLocation="CenterScreen"
         AllowsTransparency="True" Loaded="Window_Loaded">
-    <Window.Effect>
-        <DropShadowEffect ShadowDepth="10"/>
-    </Window.Effect>
     <Border Background="#000011" CornerRadius="15" BorderThickness="2" BorderBrush="#000011">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0*"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
             <!-- Side navbar -->
             <Border Margin="0,0,887,0" Background="#00002f" BorderThickness="2"  CornerRadius="15 0 0 15" Grid.ColumnSpan="2">
                 <Grid>
@@ -76,7 +69,7 @@
                         <Button Style="{StaticResource buttonInv}" Click="aboutProject_Click">O zespole</Button>
                     </Border>
                     <Border x:Name="contactBtn" Margin="432,60,240,9" Style="{StaticResource categoryBtn}" Height="60">
-                        <Button Style="{StaticResource buttonInv}" Click="aboutProject_Click">Kontakt</Button>
+                        <Button Style="{StaticResource buttonInv}" Click="Button_Click_5">Kontakt</Button>
                     </Border>
                     <Border x:Name="facebookBtn" Margin="643,60,29,9" Style="{StaticResource categoryBtn}" Height="60">
                         <Button Style="{StaticResource buttonInv}" Click="Button_Click_3">Facebook</Button>
@@ -84,14 +77,23 @@
                 </Grid>
             </Border>
             <!-- Canvas addonów -->
-            <Label Name="selectCategoryLbl" Content="Wybierz kategorię z listy obok" Foreground="#aaaaaa" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Margin="649,304,301,304" FontSize="20"/>
-            <Canvas Name="addonCanvas" Visibility="Visible" Grid.ColumnSpan="2" Margin="348,158,10,71">
+            <Label Visibility="Hidden" Name="selectCategoryLbl" Content="Wybierz kategorię z listy obok" Foreground="#aaaaaa" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Margin="649,304,301,304" FontSize="20"/>
+            <Canvas Visibility="Hidden" Name="addonCanvas" Grid.ColumnSpan="2" Margin="348,158,10,71">
                 <ScrollViewer Height="415" Width="872">
                     <StackPanel Name="addonScroller">
 
                     </StackPanel>
                 </ScrollViewer>
             </Canvas>
+
+            <Canvas x:Name="contactCanvas" Visibility="Hidden" Margin="348,158,10,71">
+                <Label Content="Kontakt" FontSize="28" Foreground="White" Margin="10"/>
+                <TextBlock TextWrapping="Wrap" Width ="445" Text="Obecnie z naszymi fanami i osobami, które chcą z nami współpracować kontaktujemy się przez nasz fanpage na platformie Facebook. W razie jakichkolwiek błędów menedżera lub pobierania prosimy zgłosić ten fakt na https://github.com/Hirek193/unofficial-addon-manager-v2/issues." Foreground="#aaaaaa" Margin="10 60 10 10" FontSize="20" Canvas.Left="10" Canvas.Top="10" Height="198"/>
+                <Button Content="Zgłoś błąd" Width="100" Click="Button_Click_4" Canvas.Left="20" Canvas.Top="253"/>
+                <Button Content="Nasz fanpage" Width="100" Click="Button_Click_3" Canvas.Left="125" Canvas.Top="253"/>
+
+            </Canvas>
+
             <Canvas Name="currentJobState" Margin="357,582,10,10">
                 <Label Name="downloadLbl" HorizontalContentAlignment="Center" Content="Brak zadań" Margin="10" Foreground="#aaaaaa" Canvas.Left="-10" Width="871"/>
             </Canvas>
